@@ -1,0 +1,140 @@
+<!-- public/upload.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Student Marks</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f4f6f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav {
+            background: #343a40;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+
+        .nav .title {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .nav .logout-btn {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 8px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .nav .logout-btn:hover {
+            background-color: #c82333;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 70px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        input[type="file"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="nav">
+        <div class="title">Teacher Portal - Upload Marks</div>
+        <form action="/logout" method="POST">
+            <button class="logout-btn" type="submit">Logout</button>
+        </form>
+    </div>
+
+    <div class="container">
+        <h2>Upload Marks Sheet</h2>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <label for="course">Select Course:</label>
+            <select name="course" id="course" required>
+                <option value="">-- Select Course --</option>
+                <option value="CSE101">CSD3005 - Data Privacy</option>
+                <!-- <option value="CSE102">CSE102 - DBMS</option>
+                <option value="CSE103">CSE103 - OS</option> -->
+            </select>
+
+            <label for="teacher">Select Teacher:</label>
+            <select name="teacher" id="teacher" required>
+                <option value="">-- Select Teacher --</option>
+                <option value="Dr. Sharma">Dr. Sajjad Ahmed</option>
+                <!-- <option value="Prof. Kiran">Prof. Kiran</option>
+                <option value="Ms. Neha">Ms. Neha</option> -->
+            </select>
+
+            <!-- <label for="slot">Select Slot:</label> -->
+            <select name="slot" id="slot" required>
+                <option value="">-- Select Slot --</option>
+                <option value="A1">D21 - D22</option>
+                <!-- <option value="B1">B1</option>
+                <option value="C1">C1</option>
+                <option value="D1">D1</option> -->
+            </select>
+
+            <label for="file">Upload PDF/XLS Sheet:</label>
+            <input type="file" name="file" id="file" accept=".pdf,.xlsx,.xls" required>
+
+            <button type="submit">Upload</button>
+        </form>
+    </div>
+
+</body>
+
+</html>

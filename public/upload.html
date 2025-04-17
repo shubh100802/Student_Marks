@@ -5,7 +5,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Upload Student Marks</title>
-    <link rel="stylesheet" href="style.css">
     <style>
         body {
             font-family: 'Segoe UI', sans-serif;
@@ -20,12 +19,14 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
             color: white;
         }
 
         .nav .title {
             font-size: 20px;
             font-weight: 600;
+            margin-bottom: 10px;
         }
 
         .nav .logout-btn {
@@ -65,6 +66,7 @@
         }
 
         input[type="file"],
+        input[type="text"],
         select {
             width: 100%;
             padding: 10px;
@@ -88,6 +90,60 @@
         button[type="submit"]:hover {
             background-color: #0056b3;
         }
+
+        
+        @media (max-width: 600px) {
+            .nav {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 20px 15px;
+            }
+
+            .nav .title {
+                font-size: 22px;
+                margin-bottom: 12px;
+            }
+
+            .nav form {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
+
+            .nav .logout-btn {
+                padding: 10px 20px;
+                font-size: 16px;
+                width: auto;
+            }
+
+            .container {
+                margin: 40px 20px;
+                padding: 25px;
+                border-radius: 10px;
+            }
+
+            h2 {
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+
+            label {
+                font-size: 16px;
+            }
+
+            input[type="text"],
+            input[type="file"],
+            select {
+                font-size: 16px;
+                padding: 12px;
+            }
+
+            button[type="submit"] {
+                font-size: 16px;
+                padding: 12px;
+            }
+        }
     </style>
 </head>
 
@@ -105,7 +161,7 @@
         <form action="/upload" method="POST" enctype="multipart/form-data">
             <label for="course">Enter Course Name/Code:</label>
             <input type="text" name="course" id="course" placeholder="e.g. CSD3005 - Data Privacy" required />
-              -- e.g. CSD3005 - Data Privacy
+            -- e.g. CSD3005 - Data Privacy
 
             <label for="teacher">Select Teacher:</label>
             <select name="teacher" id="teacher" required>
@@ -115,7 +171,7 @@
 
             <label for="slot">Enter Slot:</label>
             <input type="text" name="slot" id="slot" placeholder="e.g. D21 - D22" required />
-             --e.g. D21 - D22
+            --e.g. D21 - D22
 
             <label for="file">Upload PDF/XLS Sheet:</label>
             <input type="file" name="file" id="file" accept=".pdf,.xlsx,.xls" required>

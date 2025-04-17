@@ -1,4 +1,4 @@
-// 🔍 Updated Search Handler
+//  Search Handler
 async function searchResult() {
   const query = document.getElementById('searchInput').value.trim();
   const course = document.getElementById('course').value;   

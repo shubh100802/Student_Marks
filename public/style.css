@@ -113,4 +113,29 @@ body {
   #resultDisplay p strong {
     color: #333;
   }
+
+  /* Responsive Navbar Fix */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 15px;
+  }
+
+  .navbar-left,
+  .navbar-right {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .navbar-left h2 {
+    font-size: 20px;
+  }
+
+  .navbar-right .login-btn {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+}
+
   

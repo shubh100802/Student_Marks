@@ -103,30 +103,19 @@
     <div class="container">
         <h2>Upload Marks Sheet</h2>
         <form action="/upload" method="POST" enctype="multipart/form-data">
-            <label for="course">Select Course:</label>
-            <select name="course" id="course" required>
-                <option value="">-- Select Course --</option>
-                <option value="CSE101">CSD3005 - Data Privacy</option>
-                <!-- <option value="CSE102">CSE102 - DBMS</option>
-                <option value="CSE103">CSE103 - OS</option> -->
-            </select>
+            <label for="course">Enter Course Name/Code:</label>
+            <input type="text" name="course" id="course" placeholder="e.g. CSD3005 - Data Privacy" required />
+              -- e.g. CSD3005 - Data Privacy
 
             <label for="teacher">Select Teacher:</label>
             <select name="teacher" id="teacher" required>
                 <option value="">-- Select Teacher --</option>
                 <option value="Dr. Sajjad">Dr. Sajjad Ahmed</option>
-                <!-- <option value="Prof. Kiran">Prof. Kiran</option>
-                <option value="Ms. Neha">Ms. Neha</option> -->
             </select>
 
-            <!-- <label for="slot">Select Slot:</label> -->
-            <select name="slot" id="slot" required>
-                <option value="">-- Select Slot --</option>
-                <option value="A1">D21 - D22</option>
-                <!-- <option value="B1">B1</option>
-                <option value="C1">C1</option>
-                <option value="D1">D1</option> -->
-            </select>
+            <label for="slot">Enter Slot:</label>
+            <input type="text" name="slot" id="slot" placeholder="e.g. D21 - D22" required />
+             --e.g. D21 - D22
 
             <label for="file">Upload PDF/XLS Sheet:</label>
             <input type="file" name="file" id="file" accept=".pdf,.xlsx,.xls" required>

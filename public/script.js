@@ -1,7 +1,7 @@
 // 🔍 Updated Search Handler
 async function searchResult() {
   const query = document.getElementById('searchInput').value.trim();
-  const course = document.getElementById('courseSelect').value;
+  const course = document.getElementById('course').value;   
   const teacher = document.getElementById('teacherSelect').value;
 
   if (!query || !course || !teacher) {

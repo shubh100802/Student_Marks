@@ -179,7 +179,12 @@ app.post('/upload', upload.single('file'), async (req, res) => {
       slot
     }));
 
+    // Delete existing records for this course + teacher + slot
+    await Student.deleteMany({ course, teacher, slot });
+
+    // Insert the new updated students
     await Student.insertMany(studentsToInsert);
+
 
     res.send(`<h3>✅ File uploaded and student marks saved! <a href="upload.html">Upload another</a></h3>`);
   } catch (error) {
